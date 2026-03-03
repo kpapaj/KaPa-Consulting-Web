@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fabric on KaPa Consulting</title><link>https://kapa-consulting.sk/categories/fabric/</link><description>Recent content in Fabric on KaPa Consulting</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 26 Jul 2024 19:25:16 +1100</lastBuildDate><atom:link href="https://kapa-consulting.sk/categories/fabric/index.xml" rel="self" type="application/rss+xml"/><item><title>Direct Lake fallback reasons</title><link>https://kapa-consulting.sk/post/2024/07/2024-07-26-direct-lake-fallback-reasons/</link><pubDate>Fri, 26 Jul 2024 19:25:16 +1100</pubDate><guid>https://kapa-consulting.sk/post/2024/07/2024-07-26-direct-lake-fallback-reasons/</guid><description>&lt;p>PowerBI semantic models utilizing the Direct Lake storage mode read data directly from tables stored in OneLake. However, if a DAX query reaches the limitations of the Direct Lake mode, it may switch to DirectQuery mode (this behavior can be controlled, details follow). These limitations are as follows:&lt;/p>
+&lt;p>As of the writing of this article, the following features were unsupported:&lt;/p>
+&lt;ul>
+&lt;li>Single lakehouse/warehouse&lt;/li>
+&lt;li>Composite models&lt;/li>
+&lt;li>T-SQL based views&lt;/li>
+&lt;li>Calculated columns and calculated tables&lt;/li>
+&lt;li>String length &amp;gt; 4000 characters&lt;/li>
+&lt;li>Complex/No structured delta table column types (Binary, GUID)&lt;/li>
+&lt;li>Relationships based on DateTime types&lt;/li>
+&lt;li>Hierarchies / Excel drillthrough&lt;/li>
+&lt;li>RLS/OLS in Warehouse&lt;/li>
+&lt;li>Direct Lake model resource limits&lt;/li>
+&lt;/ul>
+&lt;p>Switching from Direct Lake mode to DirectQuery mode results in reduced performance and, in some cases, query failure, as not all DAX features are supported in DirectQuery mode.&lt;/p></description></item></channel></rss>
